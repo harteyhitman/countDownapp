@@ -42,19 +42,19 @@ const Timer = () => {
         <div className="box">
           <p id="day">{days < 10 ? "0" + days : days}</p>
         </div>
-        <span className="text">Days <b>(Abisola)</b></span>
+        <span className="text">Days</span>
       </div>
       <div className="col-4">
         <div className="box">
           <p id="hour">{hours < 10 ? "0" + hours : hours}</p>
         </div>
-        <span className="text">Hours <b>(Mistura)</b></span>
+        <span className="text">Hours</span>
       </div>
       <div className="col-4">
         <div className="box">
           <p id="minute">{minutes < 10 ? "0" + minutes : minutes}</p>
         </div>
-        <span className="text">Minutes <b>(Kiki)</b></span>
+        <span className="text">Minutes</span>
       </div>
       <div className="col-4">
         <div className="box">
