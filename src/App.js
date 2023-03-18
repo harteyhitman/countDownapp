@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="header">DAYS TO MY BIRTHDAY</h1>
+        <h1 className="header">DAYS TO MY BIRTHDAY <b>AZEEZ OYEGOKE</b></h1>
         <Timer />
       </div>
     </div>
@@ -42,26 +42,26 @@ const Timer = () => {
         <div className="box">
           <p id="day">{days < 10 ? "0" + days : days}</p>
         </div>
-        <span className="text">Days</span>
+        <span className="text">Days <b>Abisola</b></span>
       </div>
       <div className="col-4">
         <div className="box">
           <p id="hour">{hours < 10 ? "0" + hours : hours}</p>
         </div>
-        <span className="text">Hours</span>
+        <span className="text">Hours <b>Mistura</b></span>
       </div>
       <div className="col-4">
         <div className="box">
           <p id="minute">{minutes < 10 ? "0" + minutes : minutes}</p>
         </div>
-        <span className="text">Minutes</span>
+        <span className="text">Minutes <b>Kiki</b></span>
       </div>
       <div className="col-4">
         <div className="box">
           <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
         </div>
-        <span className="text">Seconds</span>
-      </div>
+        <span className="text">Seconds <b>Oyegoke's</b></span>
+      </div> 
       <div className="bottom">
         <img src={images} alt="" />
       </div>
