@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="header">DAYS TO MY BIRTHDAY <b>AZEEZ OYEGOKE</b></h1>
+        <h1 className="header">DAYS TO MY BIRTHDAY </h1>
         <Timer />
       </div>
     </div>
@@ -60,7 +60,7 @@ const Timer = () => {
         <div className="box">
           <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
         </div>
-        <span className="text">Seconds <b>(Oyegoke's)</b></span>
+        <span className="text">Seconds </span>
       </div> 
       <div className="bottom">
         <img src={images} alt="" />
