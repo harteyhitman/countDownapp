@@ -25,6 +25,7 @@
     line-height: 10;
     text-transform: capitalize;
     letter-spacing: 8px;
+    color: white;
   }
  .col-4{
     display: inline-block;
