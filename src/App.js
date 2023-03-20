@@ -14,20 +14,22 @@ const App = () => {
 };
 
 const Timer = () => {
+
   const [Months, setmonth] = useState(0);
+  const [weeks, setWeeks] = useState(0)
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
   const deadline = "August, 18, 2023";
+  
 
   const getTime = () => {
   
     const time = Date.parse(deadline) - Date.now();
-  
-
-    setmonth(Math.floor(time / (1000 * 60 * 60 * 24 / 30 ) % 12 ))
+    setmonth (Math.floor(time / (1000 * 60 * 60 * 24 * 30)));
+    setWeeks(Math.floor(time / (1000 * 60 * 60 * 24 * 7)));
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
     setMinutes(Math.floor((time / 1000 / 60) % 60));
@@ -48,6 +50,12 @@ const Timer = () => {
           <p id="Months">{Months < 10 ? "0" + Months : Months}</p>
         </div>
         <span className="text">Months</span>
+      </div>
+      <div className="col-4">
+        <div className="box">
+          <p id="weeks">{weeks < 10 ? "0" + weeks : weeks}</p>
+        </div>
+        <span className="text">weeks</span>
       </div>
       <div className="col-4">
         <div className="box">
