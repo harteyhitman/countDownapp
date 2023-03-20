@@ -6,7 +6,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="header">DAYS TO MY BIRTHDAY </h1>
+        <h1 className="header">MY BIRTHDAY </h1>
         <Timer />
       </div>
     </div>
