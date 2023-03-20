@@ -14,6 +14,7 @@ const App = () => {
 };
 
 const Timer = () => {
+  const [Months, setmonth] = useState(0);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -22,8 +23,11 @@ const Timer = () => {
   const deadline = "August, 18, 2023";
 
   const getTime = () => {
+  
     const time = Date.parse(deadline) - Date.now();
+  
 
+    setmonth(Math.floor(time / (1000 * 60 * 60 * 24 / 30 ) % 12 ))
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
     setMinutes(Math.floor((time / 1000 / 60) % 60));
@@ -38,6 +42,13 @@ const Timer = () => {
 
   return (
     <div className="timer" role="timer">
+
+      <div className="col-4">
+        <div className="box">
+          <p id="Months">{Months < 10 ? "0" + Months : Months}</p>
+        </div>
+        <span className="text">Months</span>
+      </div>
       <div className="col-4">
         <div className="box">
           <p id="day">{days < 10 ? "0" + days : days}</p>
@@ -62,6 +73,7 @@ const Timer = () => {
         </div>
         <span className="text">Seconds </span>
       </div> 
+      <h1>August 18th 2023</h1>
       <div className="bottom">
         <img src={images} alt="" />
       </div>
