@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import images from './pattern-hills.svg'
+import images from "./pattern-hills.svg";
 
 const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <h1 className="header">MY BIRTHDAY </h1>
+        <h1 className="header">BIRTHDAY COUNTDOWN</h1>
         <Timer />
       </div>
     </div>
@@ -14,21 +14,23 @@ const App = () => {
 };
 
 const Timer = () => {
-
+  const [deadline, setDeadline] = useState('18 August 2023')
+  const [name, setname] = useState('');
   const [Months, setmonth] = useState(0);
-  const [weeks, setWeeks] = useState(0)
+  const [weeks, setWeeks] = useState(0);
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
 
-  const deadline = "August, 18, 2023";
-  
-
+ 
+//  console.log(name)
+//  2023-03-30
+// console.log(Date.parse('2023-03-30'), 'parsing')
   const getTime = () => {
-  
     const time = Date.parse(deadline) - Date.now();
-    setmonth (Math.floor(time / (1000 * 60 * 60 * 24 * 30)));
+    // console.log(time, 'time')
+    setmonth(Math.floor(time / (1000 * 60 * 60 * 24 * 31 )));
     setWeeks(Math.floor(time / (1000 * 60 * 60 * 24 * 7)));
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
     setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
@@ -36,14 +38,26 @@ const Timer = () => {
     setSeconds(Math.floor((time / 1000) % 60));
   };
 
-  React.useEffect(() => {
+  const handleChange = (e) => {
+    setname(e.target.value); 
+    setDeadline(e.target.value) 
+
+    };
+useEffect(() => {
     const interval = setInterval(() => getTime(deadline), 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [deadline]);
 
   return (
     <div className="timer" role="timer">
+      <form action="">
+        <input
+          onChange={handleChange}
+          type="date"
+          placeholder="put your date here"
+        />
+      </form>
 
       <div className="col-4">
         <div className="box">
@@ -80,8 +94,8 @@ const Timer = () => {
           <p id="second">{seconds < 10 ? "0" + seconds : seconds}</p>
         </div>
         <span className="text">Seconds </span>
-      </div> 
-      <h1>August 18th 2023</h1>
+      </div>
+      <h1 className="showtime">{name}</h1>
       <div className="bottom">
         <img src={images} alt="" />
       </div>

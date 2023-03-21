@@ -8,9 +8,22 @@
   body {
     height: 100%;
     background-color: #231D2B;
-    overflow: hidden;
   }
-  
+  form input{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+      border: none;
+      width: 150px;
+      height: 30px;
+      margin: 0 auto;
+      background-color: #34364F;
+      color: #D3516B;
+      padding: 10px;
+      border-radius: 10px;
+  }
+ 
   .app {
     
     background: url(./bg-stars.svg);
