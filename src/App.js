@@ -22,8 +22,8 @@ const Timer = () => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  
 
- 
 //  console.log(name)
 //  2023-03-30
 // console.log(Date.parse('2023-03-30'), 'parsing')
@@ -33,7 +33,7 @@ const Timer = () => {
     setmonth(Math.floor(time / (1000 * 60 * 60 * 24 * 31 )));
     setWeeks(Math.floor(time / (1000 * 60 * 60 * 24 * 7)));
     setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-    setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
+    setHours(Math.floor((time / (1000 * 60 * 60 * 24)% 24)));
     setMinutes(Math.floor((time / 1000 / 60) % 60));
     setSeconds(Math.floor((time / 1000) % 60));
   };
@@ -99,6 +99,7 @@ useEffect(() => {
       <div className="bottom">
         <img src={images} alt="" />
       </div>
+      <p className="courtsy"> :Oyegoke Azeez:</p>
     </div>
   );
 };

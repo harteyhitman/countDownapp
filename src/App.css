@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
   }
-  
   html,
   body {
     height: 100%;
@@ -80,11 +79,18 @@ img{
     position: relative;
     bottom: -105px;
 }
+.courtsy{
+  color: #FBB001;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: bold;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 @media (max-width: 700px) {
     img{
         width: 300px;
         position: relative;
         bottom: 0px;
     }
-   
 }
